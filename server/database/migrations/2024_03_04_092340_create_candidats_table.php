@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('adresse')->nullable();
             $table->string('password');
             $table->boolean('banned')->default(false); // Valeur par défaut à false
-        
             $table->timestamps();
         });
     }
@@ -27,6 +26,7 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
+
     public function down(): void
     {
         Schema::dropIfExists('candidats');
