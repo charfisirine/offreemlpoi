@@ -1,0 +1,211 @@
+:root {
+    --PrimaryColor: #2062af;
+    --SecondaryColor: hsl(187, 100%, 43%);
+    --gradientColor: linear-gradient(to right, hsl(226, 91%, 38%), hsl(187, 90%, 38%));
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(201, 33%, 16%);
+    --textColor: var(--whiteColor);
+    --whiteColorDream: hsl(0, 0%, 93%);
+    --greyText: rgb(190, 190, 190);
+    --inputColor: rgb(190, 190, 190); /* Add your input color value */
+    --bodyColor: rgb(240, 240, 246);
+    --cardBG: rgb(190, 190, 190); /* Add your card background value */
+  }
+.Footer{
+    width: 100%;
+    position: relative;
+    padding: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    .videoDiv {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+
+        video{
+            height: 100%;
+            object-fit: cover;
+            
+        }
+        // &::after{
+        //     content:'';
+        //     position: absolute;
+        //     background: rgba(250, 113, 7, 0.307);
+        //     top:0;
+        //     bottom: 0;
+        //     right: 0;
+        //     left: 0;
+        //     mix-blend-mode: multiply;
+
+        }
+        .secContent {
+            width: 100%;
+            height: max-content;
+            padding: 2rem ;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin: auto;
+            row-gap: 2rem;
+            z-index: 100;
+            .contactDiv{
+                justify-content: space-between;
+                flex-direction: column;
+                gap: 1rem;
+                z-index:100;
+                .text{
+                    small{
+                        font-size: 13px;
+                        font-weight: 400;
+                        color: var(--whiteColor);
+                        
+                    }
+                    h2{
+                        color: var(--whiteColor);
+                        font-size: 1.8rem;
+                    }
+                }
+            }
+            .footerCard{
+                position: relative;
+                padding: 1rem 1rem 4rem;
+                gap: 2rem;
+                border-radius: 1rem;
+                background-color: var(--bodyColor);
+                width:100%;
+                justify-content: center;
+                flex-direction: column;
+                align-items:flex-start;
+                overflow: hidden;
+            }
+            .footerIntro{
+                flex-basis: 50%;
+                justify-content: center;
+                align-items: flex-start;
+                flex-direction: column;
+                row-gap: .5rem;
+
+            }
+            .logoDiv{
+                .logo{
+                  color:var(--PrimaryColor);
+                  font-weight: 600;
+                  .icon{
+                    font-size: 25px;
+                    color: var(--PrimaryColor);
+                    margin-right: 10px;
+                  }  
+                }
+            }
+            .footerParagraph{
+                font-size: 13px;
+                color: var(--blackColor);
+            }
+            .footerSocial{
+                column-gap: .5rem;
+                .icon{
+                    color: var(--blackColor);
+                    font-size: 20px;
+
+                    &:hover{
+                        color:var(--PrimaryColor)
+                    }
+                }
+            }
+            .footerLinks{
+                flex-basis: 50%;
+                width: 100%;
+                gap: 1rem;
+                grid-template-columns: repeat(2, 1fr);
+                justify-content: space-between;
+                .linkGroup{
+                    .groupTitle{
+                        display: block;
+                        font-weight: 600;
+                        color: var(--blackColor);
+                        margin-bottom: .5rem;
+
+                    }
+                    .footerLists{
+                        font-size: 15px;
+                        color: var(--blackColor);
+                        transition:.3s ease-in-out;
+
+                        .icon{
+                            font-size:15px;
+                            color: var(--greyText);
+
+                        }
+                        &:hover{
+                            color: var(--PrimaryColor);
+                            transform: translateX(7px);
+                            .icon{
+                                color:var(--SecondaryColor);
+                            }
+                        }
+      
+                    }
+                }
+                .footerDiv {
+                    flex-direction: row; /* Modifier la direction en ligne */
+                    display: flex; /* Utiliser Flexbox */
+                    align-items: center; /* Aligner les éléments sur la même ligne verticalement */
+                    justify-content: center; /* Centrer les éléments horizontalement */
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background: #1868ae;
+                    padding: .5rem 2rem;
+                    color: white;
+                }
+                
+                .footerDiv .icon {
+                    color: white;
+                    font-size: 1.7rem;
+                    margin-right: 10px;
+                    margin-top: -0.9rem;
+                }
+                
+            }
+   
+        }
+    }
+
+//full screen 
+@media screen and (min-width: 500px) {
+    .Footer{
+        .secContent{
+            .footerCard{
+                grid-template-columns: repeat(3,1fr);
+                padding-bottom: 1rem;
+            }
+            .footerDiv{
+                font-size: 14px;
+                flex-direction: row;
+            }
+            
+        }
+    }
+    
+}
+/* Ajoutez ces styles à votre code CSS existant */
+
+/* Pour les écrans de taille supérieure à 660px */
+@media screen and (min-width: 660px) {
+    .footerLinks {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .linkGroup {
+        flex-basis: 30%; /* Ajustez la largeur des groupes en fonction de vos besoins */
+    }
+}
+
+
+

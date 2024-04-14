@@ -1,0 +1,166 @@
+.box-account {
+  background-color: rgb(255, 255, 255);
+  height: 100%;
+  margin-left: 240px;
+  width: 85% !important;
+  position: fixed;
+  top: 1rem;
+  left: 0;
+  margin-right: 5rem;
+  margin-top: 4rem;
+  max-height: 100%;
+  overflow-y: auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0px 5px 10px rgba(90, 116, 148, 0.3);
+  border-radius: 6px;
+  z-index: 1;
+}
+
+.compte {
+  margin: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.photo {
+  position: relative;
+}
+
+.photoposition {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.iconuser {
+  fill: #428ee6;
+  transition: fill 0.2s ease-out;
+  position: relative;
+  width: 6.75rem;
+  height: 6.75rem;
+  z-index: 2;
+  max-width: inherit;
+  border-radius: 50%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Ajouter une ombre */
+}
+
+.iconPencil {
+  transition: fill 0.2s ease-out;
+  fill: #428ee6;
+  height: 0.75rem;
+  width: 1.25rem;
+}
+
+.button {
+  right: 0;
+  top: 9;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: #fff;
+  border: none;
+  position: absolute;
+  cursor: pointer;
+  z-index: 120;
+  transition: 0.2s ease-out;
+  box-shadow: 0 0 6px 0 #d4d6de;
+  text-transform: none;
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+  overflow: visible;
+}
+
+.button:hover {
+  background: #f0f0f0;
+}
+
+.editicon {
+  transition: fill 0.2s ease-out;
+  fill: #3887e4;
+  width: 1.1rem;
+  height: 1.1rem;
+  vertical-align: middle;
+  max-width: 1.25rem;
+  margin: auto;
+}
+
+.boxfiledset-container {
+  display: flex;
+  justify-content: center;
+}
+.boxfiledset-container .boxfiledset {
+  width: 40rem;
+  border-color: transparent;
+  margin-bottom: 2rem;
+}
+
+.legend {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 0.875rem !important;
+  font-weight: 700;
+  position: relative;
+  border-bottom: 2px solid #e1e3eb;
+  padding-bottom: 0.6rem;
+  margin-bottom: 0.6rem;
+  max-width: 100%;
+  white-space: normal;
+  color: inherit;
+}
+
+.editlien {
+  margin-left: auto;
+}
+
+.pg {
+  color: #4b4956;
+  scrollbar-width: thin;
+}
+
+.deconnexion, .suprimercompte {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-deconnexion {
+  width: 40rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  padding: 0.6rem 0.7rem;
+  background: #3887e4;
+  color: #fff;
+  border-radius: 5rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: inline-block;
+}
+.btn-deconnexion:hover {
+  color: #3887e4;
+  background: #f4f6f7;
+}
+
+.btn-supprimer-compte {
+  width: 40rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  padding: 0.6rem 0.7rem;
+  background: transparent;
+  border-radius: 3rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: inline-block;
+}
+.btn-supprimer-compte:hover {
+  background: #f4f6f7;
+  color: #ff0000;
+}/*# sourceMappingURL=account.css.map */
