@@ -5,12 +5,17 @@ const Table = ({ data = [], columns = [] }) => {
   const [searchInput, setSearchInput] = useState("");
 
   const FilteredData = () => {
-    return data.filter((data) => {
-      return columns.some((elt) => {
-        return data[elt.key].toLowerCase().includes(searchInput.toLowerCase());
+    return data.filter((item) => {
+      return columns.some((column) => {
+        const value = item[column.key];
+        if (typeof value === "string") {
+          return value.toLowerCase().includes(searchInput.toLowerCase());
+        }
+        return false;
       });
     });
   };
+  
 
   if (data.length === 0) {
     return null

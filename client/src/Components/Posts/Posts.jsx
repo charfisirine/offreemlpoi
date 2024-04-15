@@ -1,35 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './posts.css'
 import { MdDelete } from "react-icons/md";
 import { FaBan } from "react-icons/fa6";
 import Table from '../dataTable/Table';
+import { useDispatch, useSelector } from 'react-redux';
+// import { getPostsList,putPosts } from '../Condidat/candidatSaga';
+import { TiTick } from 'react-icons/ti';
+import { getPostsList, putPosts } from './postSaga';
 const Posts = () => {
-  const datatable = [
-    {
-        ban: false,
-        action: 1,
-        Titre: "Currey Slee",
-        Nom_Entreprise: "actia",
-        Lieu_travail:"electricite",
-        Duree: "Food Chemist",
-        Description: "loremedfdfr",
-        Salaire: "www.E2ME.com.tn",
-        Type_Contrat: "22558866",
-        id: 1,
-    },
-    {
-        ban: false,
-        action: 2,
-        Titre: "Currey Slee",
-        Nom_Entreprise: "e2me",
-        Lieu_travail:"electricite",
-        Duree: "Food Chemist",
-        Description: "vous etes prete?",
-        Salaire: "www.E2ME.com.tn",
-        Type_Contrat: "22558866",
-        id: 2,
-    },
-];
+  //hethi il partie mte3 il redux
+  //state hethi bech tjib ili fil store samineha state juste 5ater documentation hakek si nn na9dar nsamiha kif man7ib
+  const { posts } = useSelector((state) => state.post);
+  const dispatch = useDispatch();
+ 
+  console.log({ posts });
+
+  useEffect(() => {  
+    dispatch(getPostsList());
+  }, []);
+
 const tableColumns=[
     {
         key:"Titre",
@@ -77,14 +66,28 @@ const tableColumns=[
         key:"action",
         dataIndex:"Actions",
         title: (value) => <th key={value}>{value}</th>,
-        render: (value, data) => <td key={`${data.id}-${value}`}><MdDelete onClick={() => handleDelete(data.id)} className="icon"/></td>
-    },
-    {
-        key:"ban",
-        dataIndex:"Ban",
-        title: (value) => <th key={value}>{value}</th>,
-        render: (value, data) => <td key={`${data.id}-${value}`}><FaBan onClick={() => handleBan(data.id)} className="icon" /></td>
-    },
+        render: (value, data) => (
+            <td key={`${data.id}-${value}`}>
+              <MdDelete onClick={() => handleDelete(data.id)} className="icon" />
+            </td>
+          ),    },
+          {
+            key: "banned",
+            dataIndex: "Ban",
+            title: (value) => <th key={value}>{value}</th>,
+            render: (value, data) => (
+              <td key={`${data.id}-${value}`}>
+                {value === 0 && (
+                  
+                    <TiTick onClick={() => handleBan(data.id)} className="icon" />
+                  )}
+                {value === 1 && (
+      
+                    <FaBan onClick={() => handleBan(data.id)} className="icon" />
+                  )}
+              </td>
+            ),
+          },
 ]
 
 const handleDelete = (id) => {
@@ -93,10 +96,12 @@ const handleDelete = (id) => {
 
 const handleBan = (id) => {
   console.log("Ban user with ID:", id);
+  dispatch(putPosts({id}))//tib3ath putrequest a traves saga lil backend pour editer le ban (toggle ban) w hethi traja3li reponse message ma7ajtich bih l9ina solution traja3lik il emlement illi tbaddal 
+
 };
   return (
     <div className='box-post'>
-      <Table data={datatable} columns={tableColumns} />
+      <Table data={posts} columns={tableColumns} />
     </div>
   )
 }

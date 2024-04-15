@@ -30,11 +30,9 @@ const InscriptionCondidat = () => {
         formData
       );
       console.log(response.data);
-      // Rediriger vers la page de connexion après inscription réussie
       navigate("/connexion"); // Redirection vers la page de connexion
     } catch (error) {
       console.error(error.response.data);
-      // Mettre à jour les erreurs de validation
       if (error.response.data.errors) {
         setErrors(error.response.data.errors);
       }
