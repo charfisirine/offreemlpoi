@@ -21,12 +21,12 @@ const Connexion = () => {
           </div>
           <div>
             <h3 className="subtitle">
-              Welcome to Offre Emploi!👋🏻
+              Bienvenue!👋🏻
             </h3>
           </div>
           <div className="top-distance">
             <p className="paragraph">
-              Please sign-in to your account and start the adventure
+            Veuillez vous connecter à votre compte et commencer l'aventure
             </p>
           </div>
           <form>
@@ -52,7 +52,7 @@ const Connexion = () => {
                 className="form-control"
               />
             </div>
-            <div className="form-group">
+            {/* <div className="form-group">
               <div className="form-check">
                 <input
                   type="checkbox"
@@ -66,29 +66,31 @@ const Connexion = () => {
               <a href="#" className="forgot-password">
                 Forgot Password?
               </a>
-            </div>
-            <div>
-              <button type="submit" className=" btn-connexion">
+            </div> */}
+            <br></br>
+            <div className="">
+              <button type="submit" className=" btn-connexion " >
                 SIGN IN
               </button>
             </div>
             <div className="top-distance">
               <p className="new top-distance">
-                New on our platform? <a href="/inscription">Create an account</a>
+              Nouveau sur notre plateforme?<br></br>
+               <a href="/inscription">Create an account</a>
               </p>
             </div>
 
-            <div className="separator">
+            {/* <div className="separator">
               <span className="separator-line"></span>
               <span className="separator-text">or</span>
               <span className="separator-line"></span>
-            </div>
-            <div className="google top-distance">
+            </div> */}
+            {/* <div className="google top-distance">
               <a href="#" className="btn-google">
                 <FcGoogle className="icon" />
                 Continuer avec Google
               </a>
-            </div>
+            </div> */}
           </form>
         </div>
       </div>
