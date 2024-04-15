@@ -97,9 +97,11 @@ class RecruteurController extends Controller
 
         // Check if user exists and password is correct
         if (!$recruteur || !Hash::check($request->password, $recruteur->password)) {
-            return response()->json(['message' => 'Unauthorized'], 401);
+            return response()->json(['message' => 'Compte non existe ou mot de passe incorrect'], 401);
         }
-
+        if($recruteur->banned){
+            return response()->json('Your account was banned please cantact administration.');
+        }
         // Generate a new token for the recruteur
         $token = $recruteur->createToken('recruteurToken')->plainTextToken;
 

@@ -90,9 +90,11 @@ class CandidatController extends Controller
 
         // Check if user exists and password is correct
         if (!$candidat || !Hash::check($request->password, $candidat->password)) {
-            return response()->json(['message' => 'Unauthorized'], 401);
+            return response()->json(['message' => 'Compte non existe ou mot de passe incorrect'], 401);
         }
-
+        if($candidat->banned){
+            return response()->json('Your account was banned please cantact administration.');
+        }
         // Generate a new token for the candidat
         $token = $candidat->createToken('candidatToken')->plainTextToken;
 
