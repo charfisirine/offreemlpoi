@@ -14,7 +14,6 @@ Route::post('/admin/register', [AdminController::class, 'register']); //tested
 Route::post('/admin/login', [AdminController::class, 'login']); //tested
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/admin/logout', [AdminController::class, 'logout']); //tested
-    // Add other admin-specific routes here, if any
 });
 
 // Candidat API Routes
