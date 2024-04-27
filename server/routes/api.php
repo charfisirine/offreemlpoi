@@ -8,16 +8,6 @@ use App\Http\Controllers\RecruteurController;
 use App\Http\Controllers\OffreController;
 use App\Http\Controllers\DemandeOffreController;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
 
 // Admin API Routes
 Route::post('/admin/register', [AdminController::class, 'register']); //tested
