@@ -8,7 +8,6 @@ use App\Http\Controllers\RecruteurController;
 use App\Http\Controllers\OffreController;
 use App\Http\Controllers\DemandeOffreController;
 
-
 // Admin API Routes
 Route::post('/admin/register', [AdminController::class, 'register']); //tested
 Route::post('/admin/login', [AdminController::class, 'login']); //tested
